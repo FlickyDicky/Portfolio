@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    --backgroung-color: #0d1926;
+
+    --color-charcoal: #363636;
+    --color-hot-pink: #ff0883;
+    --color-electric-lime: #83ff08;
+    --color-tangerine: #ff8308;
+    --color-electric-blue: #0883ff;
+    --color-electric-purple: #8308ff;
+    --color-electric-teal: #08ff83;
+    --color-silver: #b6b6b6;
+
+    --color-gunmetal: #424242;
+    --color-raspberry: #ff1e8e;
+    --color-lime: #8eff1e;
+    --color-pumpkin: #ff8e1e;
+    --color-royal-blue: #1e8eff;
+    --color-violet: #8e1eff;
+    --color-mint-green: #1eff8e;
+    --color-light-silver: #c2c2c2;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono");
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=DM+Serif+Display:ital@0;1&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
+
+.title {
+    font-family: "Radio Canada Big", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5em;
+    color: var(--color-charcoal);
+    text-decoration: underline var(--color-electric-purple) wavy;
+}
+
+@font-face {
+    font-family: "signature-font";
+    src: local("signature-font"),
+        url("./fonts/signature-font.ttf") format("truetype");
+}
+
+body {
+    background: var(--backgroung-color);
+}
+
+nav {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding: 1em 2em;
+}
+
+.nav-links {
+    list-style: none;
+    place-self: center;
+    background-color: var(--color-charcoal);
+    display: flex;
+    padding: 1em 0.5em;
+    gap: 1em;
+    border-radius: 1000em;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 1000;
+    transition: transform 0.5s;
+}
+
+.nav-links.hidden {
+    transform: translateY(-200%); /* Move the navbar out of view */
+}
+
+.nav-links a {
+    background-color: var(--color-gunmetal);
+    text-decoration: none;
+    padding: 0.5em 1.5em;
+    border-radius: 1000em;
+    color: var(--color-light-silver);
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+}
+
+section {
+    display: flex;
+    margin: 0 auto;
+}
+
+.hero {
+    max-width: 960px;
+    justify-content: center;
+    padding-bottom: 5em;
+    position: relative;
+}
+
+.separator {
+    position: relative;
+}
+
+.projects {
+    display: grid;
+    text-align: center;
+    background-color: var(--color-light-silver);
+    width: 100%;
+    height: 20em;
+    padding: 3em;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 40px;
+}
+
+.wave .shape-fill {
+    fill: #c2c2c2;
+}
+
+.bulb {
+    position: absolute;
+    width: 40em;
+    aspect-ratio: 1/1;
+    border-radius: 1000em;
+    background: var(--color-royal-blue);
+    filter: blur(40em);
+    inset: 0;
+    margin: 0 auto;
+    margin-top: -35em;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.name {
+    font-family: "signature-font";
+    font-size: 4em;
+    color: var(--color-silver);
+    text-align: center;
+    width: fit-content;
+}
+
+.terminal-container {
+    font-family: "Ubuntu Mono", monospace;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 30em;
+    border-radius: 0.5em;
+    background-color: var(--color-charcoal);
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+}
+
+.terminal-header {
+    width: 100%;
+    height: 2em;
+    border-radius: 0.5em 0.5em 0 0;
+    background: linear-gradient(var(--color-gunmetal), var(--color-charcoal));
+}
+
+.terminal-body {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    padding: 1em;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: var(--backgroung-color);
+    color: var(--color-light-silver);
+}
+
+.terminal-body::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+    background-color: var(--color-gunmetal);
+    border-radius: 0.5em;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background-color: var(--color-charcoal);
+}
+
+.terminal-user {
+    font-weight: bold;
+    color: var(--color-electric-teal);
+}
+
+.terminal-path {
+    font-weight: bold;
+    color: var(--color-electric-blue);
+}
+
+@media (max-width: 760px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+}
