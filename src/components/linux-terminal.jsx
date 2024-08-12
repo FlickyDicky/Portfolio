@@ -1,15 +1,89 @@
 import TerminalUser from "./linux-user";
+import { useEffect, useRef, useState } from "react";
+import commands from "../JSON/commands.json";
 
 export default function Terminal() {
+    const [commandHistory, setCommandHistory] = useState([]);
+    const inputRef = useRef("");
+    const [user, setUser] = useState("ryan-buck-bamford");
+    const [path, setPath] = useState("~");
+    const bottomRef = useRef(null);
+
+    function handleOnClick() {
+        inputRef.current.focus();
+    }
+    function handleSubmitComand(command) {
+        let splitCommand = command.split(" ");
+        let output = "";
+        
+        switch (true) {
+            case commands[command] !== undefined:
+                output = commands[command];
+                break;
+    
+            case command === "clear":
+                setCommandHistory([]);
+                return;
+    
+            case splitCommand[0] === "user" && splitCommand[1] === "-u":
+                if (splitCommand.length < 3 || splitCommand[2] === "") {
+                    output = 'user: missing argumen';
+                } else {
+                    setUser(splitCommand[2]);
+                    output = `user set to: ${splitCommand[2]}`;
+                }
+                break;
+
+            case splitCommand[0] === "cd":
+                if (splitCommand[1] === "..") {
+                    setPath(p => p = p.split("/").slice(0, -1).join("/"));
+                } else if (splitCommand[1] === "~" || splitCommand.length < 2 || splitCommand[1] === "") {
+                    setPath(p => p = "~");
+
+                } else if (splitCommand[1] === ".") {
+                } else {
+                    console.log(splitCommand);
+                    
+                    setPath(p => p = `~/${splitCommand[1]}`);
+                }
+                break;
+    
+            default:
+                command === "" ? null : output = `'${command}': command not found... type 'help' for a list of commands`;
+        }
+        setCommandHistory((c) => [...c, `${command}\n${output}`]);
+    }
+
+    useEffect(() => {
+        bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    });
+
     return (
         <div className="terminal-container">
             <div className="terminal-header">
-                <div className="terminal-button"></div>
-                <div className="terminal-button"></div>
-                <div className="terminal-button"></div>
+                <div className="terminal-button">
+                <i className="fa-solid fa-angle-up"></i>
+                </div>
+                <div className="terminal-button">
+                <i className="fa-solid fa-angle-up fa-rotate-180"></i>
+                </div>
+                <div className="terminal-button">
+                <i className="fa-solid fa-xmark"></i>
+                </div>
             </div>
-            <div className="terminal-body">
-                <TerminalUser />
+            <div className="terminal-body" onClick={handleOnClick}>
+                {commandHistory.map((cmd, index) => (
+                    <TerminalUser user={user} path={path} key={index} command={cmd} />
+                ))}
+                <TerminalUser
+                    command=""
+                    path={path}
+                    user={user}
+                    ref={inputRef}
+                    onSubmit={handleSubmitComand}
+                    active={true}
+                />
+                <div ref={bottomRef}></div>
             </div>
         </div>
     );

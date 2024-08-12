@@ -10,11 +10,10 @@ export default function Name() {
         <div className="name" ref={ref}>
             {name.split("").map((letter, index) => (
                 <motion.span
-                    key={letter}
-                    initial={{ opacity: 0, y: "100%" }}
+                    key={index}
+                    initial={{ opacity: 0 }}
                     animate={{
                         opacity: isInView ? 1 : 0,
-                        y: isInView ? 0 : "100%",
                     }}
                     transition={{
                         delay: index * 0.1,

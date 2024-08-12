@@ -30,13 +30,13 @@ export default function NavLinks() {
     return (
         <ul className={`nav-links ${hidden ? "hidden" : ""}`}>
             <li>
-                <a href="#about">About</a>
+                <a href="#about"><span>About</span></a>
             </li>
             <li>
-                <a href="#projects">Projects</a>
+                <a href="#projects"><span>Projects</span></a>
             </li>
             <li>
-                <a href="#contact">Contact</a>
+                <a href="#contact"><span>Contact</span></a>
             </li>
         </ul>
     );

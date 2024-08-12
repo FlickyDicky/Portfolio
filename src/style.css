@@ -39,7 +39,7 @@
     font-weight: 400;
     font-size: 2.5em;
     color: var(--color-charcoal);
-    text-decoration: underline var(--color-electric-purple) wavy;
+    text-decoration: underline var(--color-royal-blue) wavy;
 }
 
 @font-face {
@@ -75,16 +75,31 @@ nav {
 }
 
 .nav-links.hidden {
-    transform: translateY(-200%); /* Move the navbar out of view */
+    transform: translateY(-200%);
 }
 
 .nav-links a {
+    position: relative;
     background-color: var(--color-gunmetal);
     text-decoration: none;
     padding: 0.5em 1.5em;
     border-radius: 1000em;
     color: var(--color-light-silver);
     box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+    transition: all 0.2s;
+}
+
+.nav-links a span {
+    position: relative;
+    z-index: 1;
+}
+
+.nav-links a:hover {
+    background: var(--color-charcoal);
+}
+
+.nav-links a.active {
+    background-color: var(--color-charcoal);
 }
 
 section {
@@ -134,7 +149,7 @@ section {
 
 .bulb {
     position: absolute;
-    width: 40em;
+    width: 50vw;
     aspect-ratio: 1/1;
     border-radius: 1000em;
     background: var(--color-royal-blue);
@@ -165,11 +180,45 @@ section {
     box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
 }
 
+.terminal-container input {
+    font-family: "Ubuntu Mono", monospace;
+    resize: none;
+    background-color: var(--backgroung-color);
+    color: var(--color-light-silver);
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    margin-left: .5em;
+    height: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
 .terminal-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: var(--color-light-silver);
+    gap: .5em;
+    padding: 0 1em;
     width: 100%;
     height: 2em;
     border-radius: 0.5em 0.5em 0 0;
     background: linear-gradient(var(--color-gunmetal), var(--color-charcoal));
+}
+
+.terminal-button {
+    display: grid;
+    place-items: center;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 1000em;
+    transition: all 0.3s;
+}
+
+.terminal-button:hover {
+    color: var(--color-charcoal);
+    background-color: var(--color-light-silver);
 }
 
 .terminal-body {
@@ -178,9 +227,33 @@ section {
     line-height: 1.5;
     padding: 1em;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: var(--backgroung-color);
     color: var(--color-light-silver);
+    white-space: pre-wrap;
+}
+
+.terminal-command {
+    width: fit-content;
+} 
+
+.terminal-line {
+    width: 100%;
+    align-items: baseline;
+    word-wrap: break-word;
+}
+
+.terminal-line.active {
+    display: flex;
+}
+
+.terminal-index {
+    flex-shrink: 0;
+}
+
+.terminal-body:hover {
+    cursor: text;
+
 }
 
 .terminal-body::-webkit-scrollbar {
@@ -210,5 +283,8 @@ section {
     nav {
         display: flex;
         flex-direction: column;
+    }
+    .name {
+        display: none;
     }
 }

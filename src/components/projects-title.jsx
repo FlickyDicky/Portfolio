@@ -3,15 +3,15 @@ import { useRef } from "react";
 
 export default function ProjectsTitle() {
     const title = "Projects I have worked on.";
-    const ref = useRef(null);
-    const inView = useInView(ref, {
+    const titleRef = useRef(null);
+    const inView = useInView(titleRef, {
         triggerOnce: false,
         margin: "-200px",
     });
 
     return (
-        <div ref={ref}>
-            <motion.p
+        <div ref={titleRef}>
+            <motion.span
                 className="title"
                 animate={{
                     opacity: inView ? 1 : 0,
@@ -19,7 +19,7 @@ export default function ProjectsTitle() {
                 }}
             >
                 {title}
-            </motion.p>
+            </motion.span>
         </div>
     );
 }
