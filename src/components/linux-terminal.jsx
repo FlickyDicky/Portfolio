@@ -55,7 +55,7 @@ export default function Terminal() {
     }
 
     useEffect(() => {
-        bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+        bottomRef.current?.scrollIntoView({ block: "end" });
     });
 
     return (
