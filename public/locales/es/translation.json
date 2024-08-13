@@ -1,0 +1,36 @@
+{
+    "commands" : {"about": "Hola, soy Ryan Buck Bamford.\nSoy un desarrollador fullstack.\nEstudié Desarrollo de Aplicaciones Web(DAW) en el CIFP Zonzamas, Arrecife.\nLas tecnologías que uso son:\n-HTML        -CSS         -JavaScript\n-PHP         -Python      -Laravel\n-MySQL       -PostgreSQL  -Git\nActualmente estoy aprendiendo:\n-React (Este portfolio está hecho con React)",
+    "help": "Los comandos disponibles son:\nabout\nhelp\nprojects\ncontact\nuser -u <nombre_de_usuario>\nls\nls -a\ncd <directorio>|<directorio/otro_directorio>|<.>|<..>\nclear\nfullstack",
+    "ls": "Yo          Uso         El         Sistema\nOperativo   Linux       Para       Mi         Desarrollo :)",
+    "ls -a": "Yo          Uso         El         Sistema    .git\nOperativo   Linux       Para       Mi         Desarrollo :)",
+    "fullstack": [
+        "    __       _ _     _             _              _            \n",
+        "  / _|     | | |   | |           | |            | |           \n",
+        " | |_ _   _| | |___| |_ __ _  ___| | ________ __| | _____   __\n",
+        " |  _| | | | | / __| __/ _\\` |/ __| |/ /______/ _\\` |/ _ \\ \\ / /\n",
+        " | | | |_| | | \\__ \\ || (_| | (__|   <      | (_| |  __/\\ V / \n",
+        " |_|  \\__,_|_|_|___/\\__\\__,_|\\___|_|\\_\\      \\__,_|\\___| \\_/  \n"
+    ]},
+    "projects": {
+        "title": "Mis proyectos",
+        "description": "These are some of the projects I have worked on:",
+        "list": [
+            {
+                "name": "Portfolio",
+                "description": "This portfolio is made with React.",
+                "technologies": ["React", "React Router", "i18next", "Sass"]
+            },
+            {
+                "name": "Portfolio API",
+                "description": "This is the API for my portfolio.",
+                "technologies": ["Node.js", "Express", "MongoDB", "Mongoose"]
+            },
+            {
+                "name": "Portfolio Admin",
+                "description": "This is the admin panel for my portfolio.",
+                "technologies": ["React", "React Router", "i18next", "Sass"]
+            }
+        ]
+    },
+    "role" : "Desarrollador de Aplicaciones Web"
+}

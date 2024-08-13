@@ -1,6 +1,11 @@
 {
-    "about": "Hey I'm Ryan",
-    "help": "The available commands are:\nabout\nhelp\nprojects\nskills\ncontact\nuser -u <username>\nls\nls -a\ncd <directory>|<directory/another_directory>|<.>|<..>\nclear",
-    "ls": "I          Use        The        Linux\nOperating  System     For        My         Development :)",
-    "ls -a": "I          Use        The        Linux      You foud the hidden files :o\nOperating  System     For        My         Development :)"
+    "list" : [
+        "about",
+        "help",
+        "projects",
+        "contact",
+        "ls",
+        "ls -a",
+        "fullstack"
+    ]
 }

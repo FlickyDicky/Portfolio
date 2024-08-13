@@ -2,11 +2,11 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 export default function ProjectsTitle() {
-    const title = "Projects I have worked on.";
+    const title = "Proyectos realizados";
     const titleRef = useRef(null);
     const inView = useInView(titleRef, {
         triggerOnce: false,
-        margin: "-200px",
+        margin: "-100px",
     });
 
     return (
@@ -15,7 +15,7 @@ export default function ProjectsTitle() {
                 className="title"
                 animate={{
                     opacity: inView ? 1 : 0,
-                    y: inView ? 0 : "100%",
+                    x: inView ? 0 : "100%",
                 }}
             >
                 {title}

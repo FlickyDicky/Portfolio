@@ -8,13 +8,7 @@ export default function NavLinks() {
     const handleScroll = () => {
         const currentScrollY = window.scrollY;
 
-        if (currentScrollY < lastScrollY || currentScrollY < 2) {
-            // Scrolling up
-            setHidden(false);
-        } else {
-            // Scrolling down
-            setHidden(true);
-        }
+        setHidden(!(currentScrollY < lastScrollY || currentScrollY < 2));
 
         setLastScrollY(currentScrollY);
     };
@@ -33,10 +27,10 @@ export default function NavLinks() {
                 <a href="#about"><span>About</span></a>
             </li>
             <li>
-                <a href="#projects"><span>Projects</span></a>
+                <a href="#projects"><span>Proyectos</span></a>
             </li>
             <li>
-                <a href="#contact"><span>Contact</span></a>
+                <a href="#contact"><span>Contacto</span></a>
             </li>
         </ul>
     );

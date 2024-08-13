@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono");
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=DM+Serif+Display:ital@0;1&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
+@font-face {
+    font-family: "signature-font";
+    src: local("signature-font"),
+        url("./fonts/signature-font.ttf") format("truetype");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,9 +13,9 @@
 }
 
 :root {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Radio Canada Big", sans-serif;
+
+    --box-shadow: 0 0 .5em rgba(0, 0, 0, 0.5);
 
     --backgroung-color: #0d1926;
 
@@ -30,11 +38,7 @@
     --color-light-silver: #c2c2c2;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono");
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=DM+Serif+Display:ital@0;1&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
-
 .title {
-    font-family: "Radio Canada Big", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 2.5em;
@@ -42,14 +46,11 @@
     text-decoration: underline var(--color-royal-blue) wavy;
 }
 
-@font-face {
-    font-family: "signature-font";
-    src: local("signature-font"),
-        url("./fonts/signature-font.ttf") format("truetype");
-}
-
 body {
-    background: var(--backgroung-color);
+    background: linear-gradient(
+        var(--backgroung-color) 0%,
+        var(--color-royal-blue) 100%
+    );
 }
 
 nav {
@@ -68,7 +69,7 @@ nav {
     padding: 1em 0.5em;
     gap: 1em;
     border-radius: 1000em;
-    box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+    box-shadow: var(--box-shadow);
     position: fixed;
     z-index: 1000;
     transition: transform 0.3s ease-in-out 0.1s;
@@ -85,7 +86,7 @@ nav {
     padding: 0.5em 1.5em;
     border-radius: 1000em;
     color: var(--color-light-silver);
-    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+    box-shadow: var(--box-shadow);
     transition: all 0.2s;
 }
 
@@ -103,15 +104,60 @@ nav {
 }
 
 section {
-    display: flex;
+    display: grid;
     margin: 0 auto;
+    padding: 0 1em;
 }
 
 .hero {
-    max-width: 960px;
-    justify-content: center;
+    max-width: 1080px;
     padding-bottom: 5em;
     position: relative;
+    gap: 2em;
+    grid-template-columns: 2fr 1fr;
+}
+
+.me {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    background: var(--color-silver);
+    color: var(--color-charcoal);
+    text-align: center;
+    border-radius: 0.5em;
+    box-shadow: var(--box-shadow);
+}
+
+.me > :nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    place-items: center;
+}
+
+.portrait-container {
+    width:  100%;
+    border-radius: .5em .5em 0 0;
+}
+
+.portrait-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+}
+
+.gradient-text {
+    background-image: linear-gradient(
+        to right,
+        var(--color-electric-purple),
+        var(--color-electric-blue)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: bold;
+    color: transparent;
 }
 
 .separator {
@@ -147,20 +193,6 @@ section {
     fill: #c2c2c2;
 }
 
-.bulb {
-    position: absolute;
-    width: 50vw;
-    aspect-ratio: 1/1;
-    border-radius: 1000em;
-    background: var(--color-royal-blue);
-    filter: blur(40em);
-    inset: 0;
-    margin: 0 auto;
-    margin-top: -35em;
-    z-index: -1;
-    pointer-events: none;
-}
-
 .name {
     font-family: "signature-font";
     font-size: 4em;
@@ -173,20 +205,19 @@ section {
     font-family: "Ubuntu Mono", monospace;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     height: 30em;
     border-radius: 0.5em;
     background-color: var(--color-charcoal);
-    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+    box-shadow: var(--box-shadow);
 }
 
 .terminal-container input {
     font-family: "Ubuntu Mono", monospace;
-    resize: none;
     background-color: var(--backgroung-color);
     color: var(--color-light-silver);
     border: none;
-    outline: none;
+    outline: transparent;
     font-size: 1rem;
     margin-left: .5em;
     height: 100%;
@@ -223,6 +254,7 @@ section {
 
 .terminal-body {
     display: flex;
+    border-radius: 0 0 0.5em 0.5em;
     flex-direction: column;
     line-height: 1.5;
     padding: 1em;
@@ -286,5 +318,18 @@ section {
     }
     .name {
         display: none;
+    }
+    .hero {
+        margin: 3em;
+        grid-template-columns: 1fr;
+    }
+    .me {
+        flex-direction: row;
+        
+    }
+    .me  .portrait-container, .me > :nth-child(2) {
+        width: 100%;
+        flex: 1;
+        border-radius: 0.5em 0 0 0.5em;
     }
 }
