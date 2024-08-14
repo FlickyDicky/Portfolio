@@ -1,6 +1,6 @@
 export default function Wave() {
     return (
-        <section className="separator">
+        <div className="separator">
             <div className="wave">
                 <svg
                     data-name="Layer 1"
@@ -14,6 +14,6 @@ export default function Wave() {
                     ></path>
                 </svg>
             </div>
-        </section>
+        </div>
     );
 }

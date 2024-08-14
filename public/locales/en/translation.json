@@ -1,36 +1,40 @@
 {
     "commands": {
-        "about": "Hi, I'm Ryan Buck Bamford.\nI'm a fullstack developer.\nI studied Web Application Development (DAW) at CIFP Zonzamas, Arrecife.\nThe technologies I use are:\n-HTML        -CSS         -JavaScript\n-PHP         -Python      -Laravel\n-MySQL       -PostgreSQL  -Git\nI'm currently learning:\n-React (This portfolio is made with React)",
+        "terminal" : {
+            "name": "Try typing a command"
+        },
+        "user": {
+            "missingArg": "Missing argument <username>",
+            "userSet": "User set to:"
+        },
+        "notFound": "command not found... type 'help' for a list of commands",
+        "about": "Hi, I'm Ryan Buck Bamford.\nI'm a fullstack developer.\nI studied Web Application Development at CIFP Zonzamas, Arrecife.\nThe technologies I use are:\n-HTML        -CSS         -JavaScript\n-PHP         -Python      -Laravel\n-MySQL       -PostgreSQL  -Git\n-Linux(OS)\nI'm currently learning:\n-React (This portfolio is made with React)",
         "help": "The available commands are:\nabout\nhelp\nprojects\ncontact\nuser -u <username>\nls\nls -a\ncd <directory>|<directory/another_directory>|<.>|<..>\nclear\nfullstack",
         "ls": "I          Use         The        Linux\nOperating  System      For        My         Development :)",
         "ls -a": "I          Use         The        Linux    .git\nOperating  System      For        My         Development :)",
-        "fullstack": [
-            "    __       _ _     _             _              _            \n",
-            "  / _|     | | |   | |           | |            | |           \n",
-            " | |_ _   _| | |___| |_ __ _  ___| | ________ __| | _____   __\n",
-            " |  _| | | | | / __| __/ _\\` |/ __| |/ /______/ _\\` |/ _ \\ \\ / /\n",
-            " | | | |_| | | \\__ \\ || (_| | (__|   <      | (_| |  __/\\ V / \n",
-            " |_|  \\__,_|_|_|___/\\__\\__,_|\\___|_|\\_\\      \\__,_|\\___| \\_/  \n"
-        ]
+        "fullstack": "  __       _ _     _             _              _            \n / _|     | | |   | |           | |            | |           \n| |_ _   _| | |___| |_ __ _  ___| | ________ __| | _____   __\n|  _| | | | | / __| __/ _\\` |/ __| |/ /______/ _\\` |/ _ \\ \\ / /\n| | | |_| | | \\__ \\ || (_| | (__|   <      | (_| |  __/\\ V / \n|_|  \\__,_|_|_|___/\\__\\__,_|\\___|_|\\_\\      \\__,_|\\___| \\_/  \n"
+    },
+    "navbar": {
+        "about": "About",
+        "projects": "Projects",
+        "contact": "Contact"
     },
     "projects": {
-        "title": "My projects",
-        "description": "These are some of the projects I have worked on:",
+        "title": "Projects",
         "list": [
             {
-                "name": "Portfolio",
-                "description": "This portfolio is made with React.",
-                "technologies": ["React", "React Router", "i18next", "Sass"]
+                "name": "Reserva-T",
+                "img": ["reservat-home.png", "reservat-login.png", "reservat-register.png"],
+                "description": "Reserva-T is a collaborative CRUD app developed with a school colleague, enabling users to book various services across different industries.",
+                "technologies": ["Laravel", "PHP", "Database", "Bootstrap", "JQuery", "CSS"],
+                "icons": ["fa-brands fa-laravel", "fa-brands fa-php", "fa-solid fa-database", "fa-brands fa-bootstrap", "fa-brands fa-js", "fa-brands fa-css3"]
             },
             {
-                "name": "Portfolio API",
-                "description": "This is the API for my portfolio.",
-                "technologies": ["Node.js", "Express", "MongoDB", "Mongoose"]
-            },
-            {
-                "name": "Portfolio Admin",
-                "description": "This is the admin panel for my portfolio.",
-                "technologies": ["React", "React Router", "i18next", "Sass"]
+                "name": "Not Ikea",
+                "img": ["not-ikea-homepage.png", "not-ikea-homepage-dark.png", "not-ikea-homepage-loading.png"],
+                "description": "'NotIKEA' is a responsive website crafted with clean HTML and CSS. It showcases custom styling",
+                "technologies": ["HTML", "CSS"],
+                "icons": ["fa-brands fa-html5", "fa-brands fa-css3-alt"]
             }
         ]
     },

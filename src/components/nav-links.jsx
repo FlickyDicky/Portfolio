@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function NavLinks() {
 
+    const { t } = useTranslation();
     const [hidden, setHidden] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -24,13 +26,13 @@ export default function NavLinks() {
     return (
         <ul className={`nav-links ${hidden ? "hidden" : ""}`}>
             <li>
-                <a href="#about"><span>About</span></a>
+                <a href="#about"><span>{t("navbar.about")}</span></a>
             </li>
             <li>
-                <a href="#projects"><span>Proyectos</span></a>
+                <a href="#projects"><span>{t("navbar.projects")}</span></a>
             </li>
             <li>
-                <a href="#contact"><span>Contacto</span></a>
+                <a href="#contact"><span>{t("navbar.contact")}</span></a>
             </li>
         </ul>
     );

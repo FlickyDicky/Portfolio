@@ -28,10 +28,10 @@ export default function Terminal() {
 
                 case splitCommand[0] === "user" && splitCommand[1] === "-u":
                     if (splitCommand.length < 3 || splitCommand[2] === "") {
-                        output = "user: missing argument";
+                        output = t("commands.user.missingArg");
                     } else {
                         setUser(splitCommand[2]);
-                        output = `user set to: ${splitCommand[2]}`;
+                        output = `${t("commands.user.userSet")} ${splitCommand[2]}`;
                     }
                     break;
 
@@ -50,7 +50,7 @@ export default function Terminal() {
                     break;
 
                 default:
-                    command === "" ? null : (output = `'${command}': command not found... type 'help' for a list of commands`);
+                    command === "" ? null : (output = `'${command}': ${t("commands.notFound")}`);
                     break;
             }
         }
@@ -64,6 +64,7 @@ export default function Terminal() {
     return (
         <div className="terminal-container">
             <div className="terminal-header">
+                <p>{t("commands.terminal.name")}</p>
                 <div className="terminal-button">
                     <i className="fa-solid fa-angle-up"></i>
                 </div>

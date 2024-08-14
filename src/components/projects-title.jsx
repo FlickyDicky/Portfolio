@@ -1,25 +1,29 @@
-import { motion, useInView } from "framer-motion";
+import { delay, motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function ProjectsTitle() {
-    const title = "Proyectos realizados";
+    const { t } = useTranslation();
     const titleRef = useRef(null);
     const inView = useInView(titleRef, {
-        triggerOnce: false,
-        margin: "-100px",
+        once: true,
     });
 
     return (
-        <div ref={titleRef}>
-            <motion.span
+        <>
+            <motion.div
                 className="title"
                 animate={{
                     opacity: inView ? 1 : 0,
-                    x: inView ? 0 : "100%",
+                    y: inView ? 0 : 100,
+                }}
+                transition={{
+                    delay: 0.1,
                 }}
             >
-                {title}
-            </motion.span>
-        </div>
+                {t("projects.title")}
+            </motion.div>
+            <div ref={titleRef}></div>
+        </>
     );
 }

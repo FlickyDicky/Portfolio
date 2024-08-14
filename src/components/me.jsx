@@ -11,12 +11,8 @@ export default function Me() {
                 <h1>
                     <span>Ryan Buck Bamford</span>
                 </h1>
-                <p>
-                    {t("role")}{" "}
-                </p>
-                    <div>
-                        <span className="gradient-text">Fullstack</span>.
-                    </div>
+                <p>{t("role")}</p>
+                <span className="gradient-text">Fullstack</span>
             </div>
         </div>
     );
