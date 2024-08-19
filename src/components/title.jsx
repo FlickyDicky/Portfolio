@@ -1,11 +1,9 @@
-import { delay, motion, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { useTranslation } from "react-i18next";
 
-export default function ProjectsTitle() {
-    const { t } = useTranslation();
-    const titleRef = useRef(null);
-    const inView = useInView(titleRef, {
+export default function Title(props) {
+    const ref = useRef(null);
+    const inView = useInView(ref, {
         once: true,
     });
 
@@ -21,9 +19,10 @@ export default function ProjectsTitle() {
                     delay: 0.1,
                 }}
             >
-                {t("projects.title")}
+                {props.titleName}
+                {props.subtitle && <p>{props.subtitle}</p>}
             </motion.div>
-            <div ref={titleRef}></div>
+            <div ref={ref}></div>
         </>
     );
 }

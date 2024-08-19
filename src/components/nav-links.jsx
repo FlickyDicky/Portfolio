@@ -26,7 +26,7 @@ export default function NavLinks() {
     return (
         <ul className={`nav-links ${hidden ? "hidden" : ""}`}>
             <li>
-                <a href="#about"><span>{t("navbar.about")}</span></a>
+                <a href="#hero"><span>{t("navbar.about")}</span></a>
             </li>
             <li>
                 <a href="#projects"><span>{t("navbar.projects")}</span></a>

@@ -1,24 +1,22 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=DM+Serif+Display:ital@0;1&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap");
+
 @font-face {
-    font-family: "signature-font";
     src: local("signature-font"),
         url("./fonts/signature-font.ttf") format("truetype");
+    font-family: "signature-font";
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 :root {
-    scroll-behavior: smooth;
-    font-family: "Radio Canada Big", sans-serif;
-    
     --backgroung-color: #0d1926;
-    --color-white:  #e5e5e5;
-    
+    --color-white: #e5e5e5;
+
     --color-charcoal: #363636;
     --color-hot-pink: #ff0883;
     --color-electric-lime: #83ff08;
@@ -27,7 +25,7 @@
     --color-electric-purple: #8308ff;
     --color-electric-teal: #08ff83;
     --color-silver: #b6b6b6;
-    
+
     --color-gunmetal: #424242;
     --color-raspberry: #ff1e8e;
     --color-lime: #8eff1e;
@@ -36,67 +34,91 @@
     --color-violet: #8e1eff;
     --color-mint-green: #1eff8e;
     --color-light-silver: #c2c2c2;
-    
+
     --box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
-    --card-shadow: .6em .6em  var(--color-charcoal);
+    --card-shadow: 0.6em 0.6em var(--color-charcoal);
+    --font-size: 1rem;
+    scroll-behavior: smooth;
+    font-size: var(--font-size);
+    font-family: "Radio Canada Big", sans-serif;
 }
 
 .lang-button {
     position: fixed;
-    border: transparent;
-    font-weight: bold;
     top: 1em;
     right: 1em;
     z-index: 1000;
-    background-color: var(--color-charcoal);
-    color: var(--color-light-silver);
-    padding: 0.5em 1em;
-    border-radius: 1000em;
     transition: all 0.3s;
+    border: transparent;
+    border-radius: 1000em;
+    background-color: var(--color-charcoal);
+    padding: 0.5em 1em;
+    color: var(--color-light-silver);
+    font-weight: bold;
 }
 
 .lang-button:hover {
-    background-color: var(--color-gunmetal);
     cursor: pointer;
+    background-color: var(--color-gunmetal);
 }
 
-
 .title {
-    text-align: center;
+    cursor: default;
+    background-clip: text;
+    color: transparent;
     font-style: normal;
     font-weight: bold;
     font-size: 3em;
-    color: transparent;
+    text-align: center;
+}
+
+.title p {
+    opacity: 0.8;
+    color: var(--color-light-silver);
+    font-weight: normal;
+    font-size: 0.4em;
+}
+
+#projects .title {
+    margin-bottom: 1.5em;
     background: linear-gradient(
         to bottom,
         var(--backgroung-color),
         var(--color-gunmetal)
     );
     background-clip: text;
-    margin-bottom: 1em;
+}
+
+#contact .title {
+    background: linear-gradient(
+        to bottom,
+        var(--color-white),
+        var(--color-silver)
+    );
+    background-clip: text;
 }
 
 nav {
     display: grid;
-    gap: 2em;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
+    gap: 2em;
     padding: 1em 2em;
 }
 
 .nav-links {
-    list-style: none;
-    place-self: center;
-    background-color: var(--color-charcoal);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 0.5em;
-    gap: 1em;
-    border-radius: 1000em;
-    box-shadow: var(--box-shadow);
     position: fixed;
+    grid-template-columns: repeat(3, 1fr);
+    place-self: center;
+    gap: 1em;
     z-index: 1000;
     transition: transform 0.3s ease-in-out 0.1s;
+    box-shadow: var(--box-shadow);
+    border-radius: 1000em;
+    background-color: var(--color-charcoal);
+    padding: 0.5em;
+    list-style: none;
 }
 
 .nav-links > li {
@@ -110,15 +132,15 @@ nav {
 .nav-links a {
     display: block;
     position: relative;
+    transition: all 0.2s;
+    box-shadow: var(--box-shadow);
+    border-radius: 1000em;
     background-color: var(--color-gunmetal);
+    padding: 0.5em 1.5em;
+    width: 100%;
+    color: var(--color-light-silver);
     text-align: center;
     text-decoration: none;
-    padding: 0.5em 1.5em;
-    border-radius: 1000em;
-    color: var(--color-light-silver);
-    box-shadow: var(--box-shadow);
-    transition: all 0.2s;
-    width: 100%;
 }
 
 .nav-links a span {
@@ -135,13 +157,12 @@ nav {
 }
 
 section > div:first-of-type {
-    padding: 0 1em;
-    max-width: 1080px;
     margin: 0 auto;
-    
+    padding: 0 2em;
+    max-width: 1080px;
 }
 
-.hero {
+#hero {
     background: linear-gradient(
         var(--backgroung-color) 0%,
         var(--color-royal-blue) 100%
@@ -149,107 +170,148 @@ section > div:first-of-type {
     padding-bottom: 5em;
 }
 
-.hero > div:first-of-type {
+#hero > div:first-of-type {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 2em;
-
 }
 
-.projects {
+#projects {
     position: relative;
-    background: linear-gradient(
-        var(--color-light-silver),
-        var(--color-silver)
-    );
-    padding-bottom: 3em;
+    background: linear-gradient(var(--color-light-silver), var(--color-silver));
+    padding-bottom: 5em;
+    overflow: hidden;
 }
 
-.projects div > * {
+#projects div > * {
     z-index: 3;
 }
 
-.projects .circle {
-    z-index: 1;
+#projects .circle {
     position: absolute;
+    z-index: 1;
 }
 
-.projects .small {
-    aspect-ratio: 1/1;
-    border-radius: 1000em;
-    width: 12em;
+#projects .small {
     top: 55%;
     left: -6em;
+    border-radius: 1000em;
     background: var(--color-hot-pink);
+    aspect-ratio: 1/1;
+    width: 12em;
 }
 
-.projects .big {
+#projects .big {
+    top: 20%;
+    right: 0;
+    border-radius: 10rem 0 0 10rem;
+    background-color: var(--color-electric-blue);
     width: 10rem;
     height: 20rem;
-    background-color: var(--color-electric-blue);
-    border-radius: 10rem 0 0 10rem;
-    right: 0;
-    top: 20%;
 }
 
-.projects > div:first-of-type {
+#projects > div:first-of-type {
     padding-top: 2em;
+}
+
+#contact {
+    background: var(--backgroung-color);
+    padding: 8em 0 3em 0;
+    scroll-margin: -5em;
 }
 
 .me {
     display: flex;
+    position: relative;
     flex-direction: column;
-    max-width: 100%;
+    box-shadow: var(--box-shadow);
+    border-radius: 0.5em;
     background: var(--color-light-silver);
+    max-width: 100%;
     color: var(--color-charcoal);
     text-align: center;
-    border-radius: 0.5em;
-    box-shadow: var(--box-shadow);
+    text-decoration: none;
+}
+
+.me .download {
+    display: grid;
+    position: absolute;
+    place-items: center;
+    opacity: 0;
+    transition: all 0.3s;
+    inset: 0;
+    border-radius: inherit;
+    background-color: hsl(0, 0%, 0%, 0);
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.me .download:hover {
+    opacity: 1;
+    background-color: hsl(0, 0%, 0%, .4);
 }
 
 .me > :nth-child(2) {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
     place-items: center;
-    padding: 0 1em;
+    padding: 1em 2em;
+    height: 100%;
+    font-size: .9em;
 }
 
 .me h1 {
-    margin-bottom: .4em;
+    margin-bottom: 0.4em;
 }
 
 .me p {
     font-size: 1.2em;
 }
 
+
+
 .me .gradient-text {
-    font-size: 1.2em;
+    -webkit-background-clip: text;
     background-image: linear-gradient(
         to right,
         var(--color-electric-purple),
         var(--color-electric-blue)
     );
     background-clip: text;
-    -webkit-background-clip: text;
-    font-weight: bold;
     color: transparent;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 .portrait-container {
-    width: 100%;
     border-radius: 0.5em 0.5em 0 0;
+    width: 100%;
 }
 
 .portrait-container img {
+    border-radius: inherit;
     width: 100%;
     height: 100%;
-    border-radius: inherit;
     object-fit: cover;
 }
 
-
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 3em;
+    padding: 0 2em;
+    color: var(--color-white);
+    text-align: center;
+    && h1 {
+        font-size: 2em;
+    }
+    && p {
+        font-size: 1.2em;
+    }
+}
 
 .separator {
     position: relative;
@@ -265,8 +327,8 @@ section > div:first-of-type {
 }
 
 .wave svg {
-    position: relative;
     display: block;
+    position: relative;
     width: calc(100% + 1.3px);
     height: 40px;
 }
@@ -275,48 +337,69 @@ section > div:first-of-type {
     fill: var(--color-light-silver);
 }
 
+.wave1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave1 svg {
+    display: block;
+    position: relative;
+    transform: rotateY(180deg);
+    width: calc(184% + 1.3px);
+    height: 117px;
+}
+
+.wave1 .shape-fill {
+    fill: var(--color-silver);
+}
+
 .name {
-    font-family: "signature-font";
-    font-size: 4em;
-    color: var(--color-silver);
-    text-align: center;
     width: fit-content;
+    color: var(--color-silver);
+    font-size: 4em;
+    font-family: "signature-font";
+    text-align: center;
 }
 
 .terminal-container {
-    font-family: "Ubuntu Mono", monospace;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 30em;
+    box-shadow: var(--box-shadow);
     border-radius: 0.5em;
     background-color: var(--color-charcoal);
-    box-shadow: var(--box-shadow);
+    width: 100%;
+    height: 30em;
+    font-family: "Ubuntu Mono", monospace;
 }
 
 .terminal-container input {
-    font-family: "Ubuntu Mono", monospace;
-    background-color: var(--backgroung-color);
-    color: var(--color-light-silver);
-    border: none;
-    outline: transparent;
-    font-size: 1rem;
-    margin-left: 0.5em;
     flex-grow: 1;
     flex-shrink: 1;
+    margin-left: 0.5em;
+    outline: transparent;
+    border: none;
+    background-color: var(--backgroung-color);
+    color: var(--color-light-silver);
+    font-size: 1em;
+    font-family: "Ubuntu Mono", monospace;
 }
 
 .terminal-header {
     display: flex;
-    align-items: center;
     justify-content: flex-end;
-    color: var(--color-light-silver);
+    align-items: center;
     gap: 0.5em;
+    border-radius: 0.5em 0.5em 0 0;
+    background: linear-gradient(var(--color-gunmetal), var(--color-charcoal));
     padding: 0 1em;
     width: 100%;
     height: 2em;
-    border-radius: 0.5em 0.5em 0 0;
-    background: linear-gradient(var(--color-gunmetal), var(--color-charcoal));
+    color: var(--color-light-silver);
 }
 
 .terminal-header > :nth-child(1) {
@@ -326,27 +409,27 @@ section > div:first-of-type {
 .terminal-button {
     display: grid;
     place-items: center;
+    transition: all 0.3s;
+    border-radius: 1000em;
     width: 1.2em;
     height: 1.2em;
-    border-radius: 1000em;
-    transition: all 0.3s;
 }
 
 .terminal-button:hover {
-    color: var(--color-charcoal);
     background-color: var(--color-light-silver);
+    color: var(--color-charcoal);
 }
 
 .terminal-body {
     display: flex;
-    border-radius: 0 0 0.5em 0.5em;
     flex-direction: column;
-    line-height: 1.5;
+    border-radius: 0 0 0.5em 0.5em;
+    background-color: var(--backgroung-color);
     padding: 1em;
     height: 100%;
     overflow-y: auto;
-    background-color: var(--backgroung-color);
     color: var(--color-light-silver);
+    line-height: 1.5;
     white-space: pre-wrap;
 }
 
@@ -355,9 +438,9 @@ section > div:first-of-type {
 }
 
 .terminal-line {
-    width: 100%;
-    align-items: baseline;
     word-wrap: break-word;
+    align-items: baseline;
+    width: 100%;
 }
 
 .terminal-line.active {
@@ -377,8 +460,8 @@ section > div:first-of-type {
 }
 
 .terminal-body::-webkit-scrollbar-thumb {
-    background-color: var(--color-gunmetal);
     border-radius: 0.5em;
+    background-color: var(--color-gunmetal);
 }
 
 .terminal-body::-webkit-scrollbar-track {
@@ -386,13 +469,13 @@ section > div:first-of-type {
 }
 
 .terminal-user {
-    font-weight: bold;
     color: var(--color-electric-teal);
+    font-weight: bold;
 }
 
 .terminal-path {
-    font-weight: bold;
     color: var(--color-electric-blue);
+    font-weight: bold;
 }
 
 .card-wrapper {
@@ -402,94 +485,300 @@ section > div:first-of-type {
 
 .project-card:nth-child(even) {
     justify-self: end;
+
     && > :nth-child(1) {
         order: 1;
     }
 }
 
 .project-card {
-    width: 85%;
     display: grid;
-    border: solid var(--color-charcoal) .2em;
     grid-template-columns: 1fr 1fr;
-    background-color: var(--color-white);
     box-shadow: var(--card-shadow);
+    border: solid var(--color-charcoal) 0.2em;
+    background-color: var(--color-white);
+    width: 85%;
 }
 
 .project-card img {
     justify-self: center;
-    object-fit: cover;
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .project-card > :nth-child(2) {
     padding: 2em;
 
     && > h2 {
-        width: fit-content;
-        font-size: 1.5em;
         background: linear-gradient(
             to bottom,
-            var(--color-electric-purple)50%,
+            var(--color-electric-purple) 50%,
             var(--color-hot-pink)
         );
         background-clip: text;
+        width: fit-content;
         color: transparent;
+        font-size: 1.5em;
     }
+
     && > p {
         margin-top: 1em;
         color: var(--color-charcoal);
     }
+
     && > hr {
         border: none;
-        height: 1px;
         background-color: var(--color-charcoal);
+        height: 1px;
     }
 }
 
 .technologies {
     display: flex;
+    gap: 0.3em;
     margin-top: 1em;
-    gap: .3em;
     font-size: 1.2em;
+
     && > i {
         color: var(--color-gunmetal);
     }
 }
 
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    padding: 2em 0 3em 0;
+    list-style: none;
+    && > li {
+        text-align: center;
+    }
+}
+
+.socials a {
+    position: relative;
+    opacity: 0.8;
+    transition: all 0.5s;
+    color: var(--color-light-silver);
+    text-decoration: none;
+    text-shadow: 0 0 0 .2em transparent;
+}
+
+.socials a::after {
+    position: absolute;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-electric-purple);
+    height: 1px;
+    content: "";
+}
+
+.socials a::before {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 100%;
+    box-shadow: 0 0 0.2em var(--color-electric-purple);
+    height: 1px;
+    content: "";
+}
+
+.socials a:hover::before {
+    animation: underline 0.7s linear forwards;
+}
+
+.socials a:hover::after {
+    animation: underline 0.7s linear forwards;
+}
+
+.socials a:hover {
+    opacity: 1;
+    text-shadow: 0 0 .2em var(--color-electric-purple);
+}
+
+#contact-form {
+    display: grid;
+    gap: 4em;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    gap: 3em;
+
+    && > * {
+        flex: 1;
+    }
+}
+
+#contact-form input,
+textarea {
+    transition: border-bottom 0.2s;
+    outline: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-light-silver);
+    background-color: transparent;
+    padding: 0.5em;
+    color: var(--color-light-silver);
+    font-size: 1em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+}
+
+#contact-form input:focus {
+    border-bottom: 1px solid var(--color-electric-purple);
+}
+
+#contact-form textarea {
+    border: none;
+    background-color: hsl(0, 0%, 50%, 0.2);
+    padding: 1em;
+    height: 10em;
+    resize: none;
+}
+
+#contact-form input::placeholder,
+textarea::placeholder {
+    opacity: 1;
+    color: var(--color-light-silver);
+}
+
+#contact-form button {
+    position: relative;
+    place-self: center;
+    cursor: pointer;
+    outline: transparent;
+    border: none;
+    background: none;
+    padding: 0.5em 1em;
+    width: fit-content;
+    overflow: hidden;
+    color: var(--backgroung-color);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#contact-form button span {
+    position: relative;
+    z-index: 1;
+    font-family: "Radio Canada Big";
+}
+
+#contact-form button::before {
+    position: absolute;
+    animation: rotate 3s linear reverse infinite;
+    inset: -10em;
+    background-image: conic-gradient(
+        transparent 55%,
+        var(--color-electric-purple) 85%
+    );
+    padding: 1px;
+    content: "";
+}
+
+#contact-form button::after {
+    position: absolute;
+    transition: all 0.3s;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        var(--color-white),
+        var(--color-silver) 50%
+    );
+    content: "";
+}
+
+#contact-form button:hover::after,
+#contact-form button:focus::after {
+    transform: scaleX(0.93) scaleY(0.87);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes underline {
+    0% {
+        right: 100%;
+        left: 0;
+    }
+    50% {
+        right: 25%;
+        left: 0;
+    }
+    100% {
+        right: 0;
+        left: 100%;
+    }
+}
+
 @media (max-width: 760px) {
+    :root {
+        --font-size: 0.9rem;
+    }
+
     nav {
         display: flex;
         flex-direction: column;
     }
+
     .name {
         display: none;
     }
-    .hero > div:first-of-type {
+
+    #hero > div:first-of-type {
+        grid-template-columns: 1fr;
         margin: 3em;
-        grid-template-columns: 1fr;
     }
-    .projects > div:first-of-type {
+
+    section > div:first-of-type {
+        grid-template-columns: 1fr;
         margin: 0 3em;
-        grid-template-columns: 1fr;
     }
+
     .me {
         flex-direction: row;
     }
+
     .me .portrait-container,
     .me > :nth-child(2) {
-        width: 100%;
         flex: 1;
         border-radius: 0.5em 0 0 0.5em;
+        width: 100%;
     }
+
     .project-card {
         grid-template-columns: 1fr;
         width: 100%;
     }
+
     .project-card:nth-child(even) {
         && > :nth-child(1) {
             order: -1;
         }
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+    .socials {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --font-size: 0.7rem;
     }
 }

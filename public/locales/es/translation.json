@@ -1,4 +1,5 @@
 {
+    "role": "Desarrollador de Aplicaciones Web",
     "commands": {
         "terminal" : {
             "name": "Escribe un comando"
@@ -8,7 +9,7 @@
             "userSet": "Usuario establecido a:"
         },
         "notFound": "comando no encontrado... escribe 'help' para ver una lista de comandos",
-        "about": "Hola, soy Ryan Buck Bamford.\nSoy un desarrollador fullstack.\nEstudié Desarrollo de Aplicaciones Web(DAW) en el CIFP Zonzamas, Arrecife.\nLas tecnologías que uso son:\n-HTML        -CSS         -JavaScript\n-PHP         -Python      -Laravel\n-MySQL       -PostgreSQL  -Git\n-Linux(OS)\nActualmente estoy aprendiendo:\n-React (Este portfolio está hecho con React)",
+        "about": "Hola, soy Ryan Buck Bamford.\nSoy un desarrollador fullstack.\nEstudié Desarrollo de Aplicaciones Web(DAW) en el CIFP Zonzamas, Arrecife.\nLas tecnologías que uso son:\n-HTML        -CSS         -JavaScript\n-PHP         -Python      -Laravel\n-MySQL       -Git         -Linux(OS)\nActualmente estoy aprendiendo:\n-React (Este portfolio está hecho con React)",
         "help": "Los comandos disponibles son:\nabout\nhelp\nprojects\ncontact\nuser -u <nombre_de_usuario>\nls\nls -a\ncd <directorio>|<directorio/otro_directorio>|<.>|<..>\nclear\nfullstack",
         "ls": "Yo          Uso         El         Sistema\nOperativo   Linux       Para       Mi         Desarrollo :)",
         "ls -a": "Yo          Uso         El         Sistema    .git\nOperativo   Linux       Para       Mi         Desarrollo :)",
@@ -26,7 +27,7 @@
                 "name": "Reserva-T",
                 "img": ["reservat-home.png", "reservat-login.png", "reservat-register.png"],
                 "description": "Reserva-T es una aplicación CRUD colaborativa desarrollada con un compañero, que permite a los usuarios reservar servicios en diferentes industrias.",
-                "technologies": ["Laravel", "PHP", "Base de Datos", "Bootstrap", "JQuery", "CSS"],
+                "technologies": ["Laravel", "PHP", "Mysql", "Bootstrap", "JQuery", "CSS"],
                 "icons": ["fa-brands fa-laravel", "fa-brands fa-php", "fa-solid fa-database", "fa-brands fa-bootstrap", "fa-brands fa-js", "fa-brands fa-css3"]
             },
             {
@@ -38,5 +39,33 @@
             }
         ]
     },
-    "role": "Desarrollador de Aplicaciones Web"
+    "resume": {
+        "title": "Ver Currículum",
+        "link": "CV.pdf"
+    },
+    "contact": {
+        "title": "Contacto",
+        "subtitle": "¡Pongámonos en contacto!",
+        "form": {
+            "name": "Nombre",
+            "message": "Mensaje",
+            "submit": "Enviar"
+        }
+    },
+    "socials": {
+        "github": {
+            "name": "GitHub",
+            "url": "https://github.com/FlickyDicky",
+            "icon": "fab fa-github"
+        },
+        "linkedin": {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/ryan-buck-bamford/",
+            "icon": "fab fa-linkedin"
+        }
+    },
+    "email": {
+        "subject": "Portfolio Contact Form",
+        "body": "Hi Ryan, I'm [name].\n[message]"
+    }
 }

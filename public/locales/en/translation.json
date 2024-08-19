@@ -1,6 +1,7 @@
 {
+    "role": "Web App Developer",
     "commands": {
-        "terminal" : {
+        "terminal": {
             "name": "Try typing a command"
         },
         "user": {
@@ -8,8 +9,8 @@
             "userSet": "User set to:"
         },
         "notFound": "command not found... type 'help' for a list of commands",
-        "about": "Hi, I'm Ryan Buck Bamford.\nI'm a fullstack developer.\nI studied Web Application Development at CIFP Zonzamas, Arrecife.\nThe technologies I use are:\n-HTML        -CSS         -JavaScript\n-PHP         -Python      -Laravel\n-MySQL       -PostgreSQL  -Git\n-Linux(OS)\nI'm currently learning:\n-React (This portfolio is made with React)",
-        "help": "The available commands are:\nabout\nhelp\nprojects\ncontact\nuser -u <username>\nls\nls -a\ncd <directory>|<directory/another_directory>|<.>|<..>\nclear\nfullstack",
+        "about": "Hi, I'm Ryan Buck Bamford.\nI'm a fullstack developer.\nI studied Web Application Development at CIFP Zonzamas, Arrecife.\nThe technologies I use are:\n-HTML        -CSS         -JavaScript\n-PHP         -Python      -Laravel\n-MySQL       -Git         -Linux(OS)\nI'm currently learning:\n-React (This portfolio is made with React)",
+        "help": "The available commands are:\nabout\nhelp\nuser -u <username>\nls\nls -a\ncd <directory>|<directory/another_directory>|<.>|<..>\nclear\nfullstack",
         "ls": "I          Use         The        Linux\nOperating  System      For        My         Development :)",
         "ls -a": "I          Use         The        Linux    .git\nOperating  System      For        My         Development :)",
         "fullstack": "  __       _ _     _             _              _            \n / _|     | | |   | |           | |            | |           \n| |_ _   _| | |___| |_ __ _  ___| | ________ __| | _____   __\n|  _| | | | | / __| __/ _\\` |/ __| |/ /______/ _\\` |/ _ \\ \\ / /\n| | | |_| | | \\__ \\ || (_| | (__|   <      | (_| |  __/\\ V / \n|_|  \\__,_|_|_|___/\\__\\__,_|\\___|_|\\_\\      \\__,_|\\___| \\_/  \n"
@@ -24,19 +25,69 @@
         "list": [
             {
                 "name": "Reserva-T",
-                "img": ["reservat-home.png", "reservat-login.png", "reservat-register.png"],
-                "description": "Reserva-T is a collaborative CRUD app developed with a school colleague, enabling users to book various services across different industries.",
-                "technologies": ["Laravel", "PHP", "Database", "Bootstrap", "JQuery", "CSS"],
-                "icons": ["fa-brands fa-laravel", "fa-brands fa-php", "fa-solid fa-database", "fa-brands fa-bootstrap", "fa-brands fa-js", "fa-brands fa-css3"]
+                "img": [
+                    "reservat-home.png",
+                    "reservat-login.png",
+                    "reservat-register.png"
+                ],
+                "description": "Reserva-T is a collaborative CRUD app, enabling users to book services across different industries.",
+                "technologies": [
+                    "Laravel",
+                    "PHP",
+                    "Mysql",
+                    "Bootstrap",
+                    "JQuery",
+                    "CSS"
+                ],
+                "icons": [
+                    "fa-brands fa-laravel",
+                    "fa-brands fa-php",
+                    "fa-solid fa-database",
+                    "fa-brands fa-bootstrap",
+                    "fa-brands fa-js",
+                    "fa-brands fa-css3"
+                ]
             },
             {
                 "name": "Not Ikea",
-                "img": ["not-ikea-homepage.png", "not-ikea-homepage-dark.png", "not-ikea-homepage-loading.png"],
-                "description": "'NotIKEA' is a responsive website crafted with clean HTML and CSS. It showcases custom styling",
+                "img": [
+                    "not-ikea-homepage.png",
+                    "not-ikea-homepage-dark.png",
+                    "not-ikea-homepage-loading.png"
+                ],
+                "description": "'NotIKEA' is a responsive website crafted with clean HTML and CSS. It showcases custom styling.",
                 "technologies": ["HTML", "CSS"],
                 "icons": ["fa-brands fa-html5", "fa-brands fa-css3-alt"]
             }
         ]
     },
-    "role": "Web App Developer"
+    "resume": {
+        "title": "See Resume",
+        "link": "englishCV.pdf"
+    },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Let's get in touch!",
+        "form": {
+            "name": "Name",
+            "message": "Message",
+            "submit": "Submit"
+        }
+    },
+    "socials": {
+        "github": {
+            "name": "GitHub",
+            "url": "https://github.com/FlickyDicky",
+            "icon": "fab fa-github"
+        },
+        "linkedin": {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/ryan-buck-bamford/",
+            "icon": "fab fa-linkedin"
+        }
+    },
+    "email": {
+        "subject": "Portfolio Contact Form",
+        "body": "Hi Ryan, I'm [name].\n[message]"
+    }
 }
