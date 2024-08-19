@@ -90,7 +90,6 @@
         }
     },
     "email": {
-        "subject": "Portfolio Contact Form",
-        "body": "Hi Ryan, I'm [name].\n[message]"
+        "subject": "Contacted from Portfolio"
     }
 }

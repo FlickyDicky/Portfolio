@@ -16,7 +16,7 @@ export default function Socials() {
                     </li>
                 ))}
                 <li>
-                    <a href="">
+                    <a href={"mailto:rbuckbamford@gmail.com?subject="+t("email.subject")}>
                     <i className="fa-solid fa-envelope"></i> rbuckbamford@gmail.com
                     </a>
                 </li>
