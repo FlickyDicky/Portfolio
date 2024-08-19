@@ -723,8 +723,7 @@ textarea::placeholder {
     content: "";
 }
 
-#contact-form button:hover::after,
-#contact-form button:focus::after {
+#contact-form button:hover::after {
     transform: scaleX(0.93) scaleY(0.87);
 }
 
@@ -766,7 +765,9 @@ textarea::placeholder {
     .name {
         display: none;
     }
-
+    #contact .title {
+        margin-top: 1em;
+    }
     #hero > div:first-of-type {
         grid-template-columns: 1fr;
         margin: 3em;

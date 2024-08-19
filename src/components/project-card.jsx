@@ -27,7 +27,9 @@ export default function Projects() {
                             delay: 0.05,
                         }}
                     >
-                        <img src={"/images/projects/" + project.img[0]} alt={project.name} />
+                        <div>
+                            <img src={"/images/projects/" + project.img[0]} alt={project.name} />
+                        </div>
                         <div className="project">
                             <div>
                                 <h2>{project.name}</h2>
