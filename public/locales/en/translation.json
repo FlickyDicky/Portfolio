@@ -25,12 +25,13 @@
         "list": [
             {
                 "name": "Reserva-T",
+                "github": "https://github.com/FlickyDicky/ReservaT",
                 "img": [
                     "reservat-home.png",
                     "reservat-login.png",
                     "reservat-register.png"
                 ],
-                "description": "Reserva-T is a collaborative CRUD app, enabling users to book services across different industries.",
+                "description": "'Reserva-T' is a collaborative CRUD app, enabling users to book services across different industries.",
                 "technologies": [
                     "Laravel",
                     "PHP",
@@ -50,6 +51,8 @@
             },
             {
                 "name": "Not Ikea",
+                "url": "https://notikea.neocities.org/",
+                "github": "https://github.com/FlickyDicky/NotIkea",
                 "img": [
                     "not-ikea-homepage.png",
                     "not-ikea-homepage-dark.png",

@@ -2,8 +2,6 @@
     "list" : [
         "about",
         "help",
-        "projects",
-        "contact",
         "ls",
         "ls -a",
         "fullstack"

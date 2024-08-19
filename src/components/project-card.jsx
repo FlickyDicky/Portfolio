@@ -29,7 +29,22 @@ export default function Projects() {
                     >
                         <img src={"/images/projects/" + project.img[0]} alt={project.name} />
                         <div className="project">
-                            <h2>{project.name}</h2>
+                            <div>
+                                <h2>{project.name}</h2>
+                                <div className="project-links">
+                                    {project.github && (
+                                        <a href={project.github} target="_blank">
+                                            Github <i className="fa-brands fa-github"></i>
+                                        </a>
+                                    )}
+                                    {project.url && (
+                                        <a href={project.url} target="_blank">
+                                            Live demo <i className="fa-solid fa-external-link"></i>
+                                        </a>
+                                    )}
+                                </div>
+
+                            </div>
                             <hr />
                             <p>{project.description}</p>
                             <div className="technologies">

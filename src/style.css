@@ -79,6 +79,20 @@
     font-size: 0.4em;
 }
 
+#hero .title {
+    margin: 1em 2em 1em 2em;
+    background: linear-gradient(
+        to bottom,
+        var(--backgroung-color),
+        var(--color-gunmetal)
+    );
+    background-clip: text;
+    && p {
+        opacity: 1;
+        color: var(--color-white);
+    }
+}
+
 #projects .title {
     margin-bottom: 1.5em;
     background: linear-gradient(
@@ -498,6 +512,7 @@ section > div:first-of-type {
     border: solid var(--color-charcoal) 0.2em;
     background-color: var(--color-white);
     width: 85%;
+    white-space: pre-wrap;
 }
 
 .project-card img {
@@ -508,9 +523,25 @@ section > div:first-of-type {
 }
 
 .project-card > :nth-child(2) {
-    padding: 2em;
+    padding: 1.5em;
 
-    && > h2 {
+    && > :nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    && .project-links {
+        display: flex;
+        gap: 1em;
+        && a {
+            place-items: center;
+            border-radius: 1000em;
+            color: var(--color-charcoal);
+            text-decoration: none;
+        }  
+    }
+
+    && h2 {
         background: linear-gradient(
             to bottom,
             var(--color-electric-purple) 50%,
