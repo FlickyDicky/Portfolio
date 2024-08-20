@@ -5,7 +5,7 @@ export default function ContactForm() {
     const { t } = useTranslation();
 
     return (
-        <form id="contact-form" method="POST" action="https://formsubmit.co/4541e754aeeccb974d48a5d4d1e32e5f">
+        <form id="contact-form" method="POST" action={"https://formsubmit.co/"+import.meta.env.VITE_EMAIL_HASH}>
             <input type="hidden" name="_captcha" value="false"></input>
             <input type="text" name="_honey" style={{display: "none"}}></input>
             <input type="hidden" name="_template" value="box"></input>
