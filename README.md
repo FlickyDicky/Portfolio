@@ -24,13 +24,8 @@
   - React.js
   - Framer Motion
   - i18next
-  - SweetAlert2
   - CSS3 (with custom styling)
   
-- **Backend**:
-  - Firebase Functions (Optional)
-  - PHP (for API key management)
-
 - **Deployment**:
   - Firebase Hosting
 
