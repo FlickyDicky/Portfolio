@@ -192,7 +192,7 @@ section > div:first-of-type {
 
 #projects {
     position: relative;
-    background: linear-gradient(var(--color-light-silver), var(--color-silver));
+    background: linear-gradient(var(--color-white), var(--color-silver));
     padding-bottom: 5em;
     overflow: hidden;
 }
@@ -348,7 +348,7 @@ section > div:first-of-type {
 }
 
 .wave .shape-fill {
-    fill: var(--color-light-silver);
+    fill: var(--color-white);
 }
 
 .wave1 {
